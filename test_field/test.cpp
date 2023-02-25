@@ -1,23 +1,13 @@
-#include <iostream>
-#include <cstdlib>
+#include <bits/stdc++.h>
 using namespace std;
+#define rep(i,e) for(int i=0;i<(e);i++)
+using ll=long long int;
+using P=pair<int,int>;
+
 int main()
 {
-  int* a;
-  a=(int*)malloc(sizeof(int)*5);
-  *a=(int*){1,2,3,4,5};
+  int n; cin>>n;
+  cout<<pow(2,n)<<endl;
 
-  for(int i=0;i<5;i++)
-    cout<<a[i]<<" ";
-  cout<<endl;
-
-  //a=(int[5]){5,4,3,2,1};
-
-  for(int i=0;i<5;i++)
-    cout<<a[i]<<" ";
-  cout<<endl;
-}
-
-void fuNc()
-{
+  return 0;
 }

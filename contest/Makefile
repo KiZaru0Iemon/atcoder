@@ -7,11 +7,11 @@ clean:
 
 .PHONY:allclean ## 必要ファイル以外すべて削除
 allclean:
-	@find -maxdepth 1 -type f | grep -v -e "Makefile" -e "base.cpp" | xargs rm;
+	@find -maxdepth 1 -type f | grep -v -e "Makefile" -e "base.cpp" -e "Timer.h" | xargs rm;
 
 .PHONY:merge ## cppファイルをcodesフォルダに移動
 merge:
-	@find -maxdepth 1 -type f | grep -v -e "Makefile" -e "base.cpp" | xargs -IXX mv XX ./codes;
+	@find -maxdepth 1 -type f | grep -v -e "Makefile" -e "base.cpp" -e "Timer.h" | xargs -IXX mv XX ./codes;
 
 .PHONY:help ## ヘルプを見ることができる
 help:

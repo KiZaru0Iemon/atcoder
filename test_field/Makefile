@@ -7,4 +7,4 @@ clean:
 
 .PHONY:allclean
 allclean:
-	@find -maxdepth 1 -type f | grep -v -e "Makefile" -e "base.cpp" | xargs rm;
+	@find -maxdepth 1 -type f | grep -v -e "Makefile" -e "base.cpp" -e "Timer.h" | xargs rm;

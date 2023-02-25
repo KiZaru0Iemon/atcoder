@@ -6,4 +6,6 @@ using P=pair<int,int>;
 
 int main()
 {
+
+  return 0;
 }

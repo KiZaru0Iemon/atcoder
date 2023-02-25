@@ -1,4 +1,4 @@
-message ?=## commitメッセージ
+message ?= ## commitメッセージ
 
 .PHONY:push ## リモートリポジトリにpush
 push:
