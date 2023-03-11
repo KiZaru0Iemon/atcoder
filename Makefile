@@ -1,5 +1,13 @@
 message ?= ## commitメッセージ
 
+.PHONY:help ## ヘルプを見ることができる
+help:
+	@echo "変数 一覧 :"
+	@grep -E '^[a-zA-Z_-]+ \?=.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = "( .= )|(## )"}; {printf "\033[31m%-12s\033[0m %s (default : %s)\n", $$1, $$3, $$2}'
+	@echo ""
+	@echo "target 一覧 :";
+	@grep -E '^\.[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sed 's/.PHONY://g' | awk 'BEGIN {FS = " ## "}; {printf "\033[36m%-12s\033[0m %s\n", $$1, $$2}'
+
 .PHONY:push ## リモートリポジトリにpush
 push:
 	git add .
@@ -11,10 +19,3 @@ fpull:
 	git fetch origin master
 	git reset --hard origin/master
 
-.PHONY:help ## ヘルプを見ることができる
-help:
-	@echo "変数 一覧 :"
-	@grep -E '^[a-zA-Z_-]+ \?=.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = "( .= )|(## )"}; {printf "\033[31m%-12s\033[0m %s (default : %s)\n", $$1, $$3, $$2}'
-	@echo ""
-	@echo "target 一覧 :";
-	@grep -E '^\.[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sed 's/.PHONY://g' | awk 'BEGIN {FS = " ## "}; {printf "\033[36m%-12s\033[0m %s\n", $$1, $$2}'
