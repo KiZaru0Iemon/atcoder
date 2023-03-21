@@ -8,6 +8,12 @@ using P=myp<int,int>;
 
 int main()
 {
+  int N; cin>>N;
+  rep(i,N){
+    int tmp; cin>>tmp;
+    if(!(tmp&1))cout<<tmp<<" ";
+  }
+  cout<<endl;
 
   return 0;
 }

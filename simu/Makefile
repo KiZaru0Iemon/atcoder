@@ -1,5 +1,5 @@
 %:
-	@g++ $@.cpp -o $@.out && ./$@.out
+	@g++ $@.cpp -o $@.out -Wall && ./$@.out
 
 .PHONY:clean ## 実行ファイルをすべて削除
 clean:
