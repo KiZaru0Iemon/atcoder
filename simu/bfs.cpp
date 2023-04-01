@@ -7,21 +7,35 @@ class myp{public: T1 f; T2 s;};
 using P=myp<int,int>;
 
 int R,C;
-P s;
-P g;
 vector<vector<char>> e;
+vector<vector<char>> visited;
+vector<vector<int>> distance;
+
+int bfs(P s, P g)
+{
+  queue<P> q;
+}
 
 int main()
 {
+  P s,g;
   cin>>R>>C;
   cin>>s.f>>s.s;
   cin>>g.f>>g.s;
   e.assign(R,{});
-  rep(i,R)
+  visited.assign(R,{});
+  distance.assign(R,{});
+  rep(i,R){
     e[i].assign(C,0);
+    visited[i].assign(C,0);
+    distance[i].assign(C,0);
+  }
   rep(i,R)
     rep(j,C)
       cin>>e[i][j];
 
+  cout<<bfs(s,g)<<endl;
+
   return 0;
 }
+

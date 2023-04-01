@@ -8,8 +8,19 @@ using P=myp<int,int>;
 
 int main()
 {
-  cout<<LONG_MAX<<endl;
-  cout<<LONG_MIN<<endl;
+  string S[8];
+  rep(i,8)
+    cin>>S[i];
+
+  rep(i,8){
+    rep(j,8){
+      if(S[i][j]=='*'){
+        cout<<(char)('a'+j);
+        cout<<(char)('8'-i)<<endl;
+        return 0;
+      }
+    }
+  }
 
   return 0;
 }

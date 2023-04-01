@@ -8,8 +8,17 @@ using P=myp<int,int>;
 
 int main()
 {
-  cout<<LONG_MAX<<endl;
-  cout<<LONG_MIN<<endl;
+  int N; cin>>N;
+  string S; cin>>S;
+  int pre=S[0];
+  for(int i=1;i<(int)S.size();i++){
+    if(pre==S[i]){
+      cout<<"No"<<endl;
+      return 0;
+    }
+    pre=S[i];
+  }
+  cout<<"Yes"<<endl;
 
   return 0;
 }
