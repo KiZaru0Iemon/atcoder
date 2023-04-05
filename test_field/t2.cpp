@@ -31,19 +31,13 @@ using P=myp<int,int>;
 
 int main()
 {
-  P a={100,200};
-  //P a;
-  //a=(P){100,200};
-  //a.f=100;
-  //a.s=200;
-  cout<<"first : "<<a.first<<" ";
-  cout<<"second : "<<a.second<<endl;
+  int N=30;
+  vector<P> arr;
+  arr.assign(N,{0,0});
 
-  cout<<"f : "<<a.f<<" ";
-  cout<<"s : "<<a.s<<endl;
-
-  int f=300;
-  cout<<"f : "<<f<<endl;
+  rep(i,N){
+    cout<<arr[i].f<<" "<<arr[i].s<<endl;
+  }
 
   return 0;
 }
