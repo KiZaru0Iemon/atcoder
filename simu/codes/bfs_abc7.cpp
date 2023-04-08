@@ -1,3 +1,4 @@
+/*幅優先探索*/
 #include <bits/stdc++.h>
 using namespace std;
 #define rep(i,e) for(int i=0;i<(e);i++)
