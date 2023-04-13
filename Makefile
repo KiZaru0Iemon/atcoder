@@ -14,6 +14,12 @@ push:
 	git commit -m "$(message)"
 	git push origin master
 
+.PHONY:auto ## 日付と時間をメッセージとしてリモートリポジトリにpush
+auto:
+	git add .
+	date | xargs -IXX git commit -m "XX"
+	git push origin master
+
 .PHONY:fpull ## リモートリポジトリからの強制pull
 fpull:
 	git fetch origin master

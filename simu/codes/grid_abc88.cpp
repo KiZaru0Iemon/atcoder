@@ -13,9 +13,9 @@ int dire[][2]={{0,1},{0,-1},{1,0},{-1,0}};
 void bfs()
 {
   queue<P> q;
-  q.push({0,0});
-  visited[0][0]=false;
+  visited[0][0]=true;
   dist[0][0]=0;
+  q.push({0,0});
 
   while(q.size()){
     P c=q.front(); q.pop();
@@ -24,9 +24,11 @@ void bfs()
     rep(i,4){
       int uf=cf+dire[i][0];
       int us=cs+dire[i][1];
-      P u={uf,us};
       if(uf<0 || uf>=H || us<0 || us>=W )continue;
-      if()continue;
+      if(visited[uf][us] || s[uf][us]=='#')continue;
+      visited[uf][us]=true;
+      dist[uf][us]=dist[cf][cs]+1;
+      q.push({uf,us});
     }
   }
 }
@@ -43,7 +45,7 @@ int main()
   rep(i,H){
     s[i].resize(W);
     visited[i].assign(W,false);
-    dist[i].assign(W,0);
+    dist[i].assign(W,-1);
   }
   rep(i,H){
     rep(j,W){
@@ -54,7 +56,11 @@ int main()
   }
 
   bfs();
-  cout<<(H*W-bnum-dist[H-1][W-1]-1)<<endl;
+
+  if(dist[H-1][W-1]==-1)
+    cout<<-1<<endl;
+  else
+    cout<<(H*W-bnum-dist[H-1][W-1]-1)<<endl;
 
   return 0;
 }
