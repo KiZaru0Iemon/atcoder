@@ -6,6 +6,8 @@ using P=pair<int,int>;
 
 int main()
 {
+  int n,k; cin>>n>>k;
+
 
   return 0;
 }
