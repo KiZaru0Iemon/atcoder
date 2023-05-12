@@ -1,3 +1,4 @@
+/* ~~~ binary indexed tree (BIT) ~~~ */
 #include <bits/stdc++.h>
 using namespace std;
 #define rep(i,e) for(int i=0;i<(int)(e);i++)
@@ -37,29 +38,6 @@ public:
 
 int main()
 {
-  int N; cin>>N;
-  vector<P> box(N);
-  rep(i,N) cin>>box[i].first>>box[i].second; //first:w, second:h
-
-  sort(box.begin(),box.end());
-
-  // hの最大値を調べる
-  int max_h=0;
-  rep(i,N)
-    max_h=max(max_h,box[i].second);
-
-  binary_indexed_tree<int> bit(max_h,0,[&](int a, int b){return max(a,b);});
-
-  rep(i,N){
-    for(int j=i; (j<n)&&(box[i].first==box[j].first); j++)
-  }
-
-  //箱の大きさかぶりをなくしつつ、LISで個数を調べる
-  //縦基準の最大入れ子がわかる
 
   return 0;
 }
-
-  //cout<<endl;
-  //rep(i,N)
-  //  cout<<box[i].first<<" "<<box[i].second<<endl;
