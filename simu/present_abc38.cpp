@@ -49,17 +49,21 @@ int main()
     max_h=max(max_h,box[i].second);
 
   binary_indexed_tree<int> bit(max_h,0,[&](int a, int b){return max(a,b);});
+  vector<int> tmp(N);
 
   rep(i,N){
-    for(int j=i; (j<n)&&(box[i].first==box[j].first); j++)
+    for(int j=i; (j<N)&&(box[i].first==box[j].first); j++)
+      tmp[j]=bit.initial_range_concat(box[j].second)+1; //j番目の最大箱数を調べる
+
+    int j;
+    for(j=i; (j<N)&&(box[i].first==box[j].first); j++)
+      bit.point_append(box[j].second,tmp[j]); //hの箱の最大箱数を更新
+
+    i=j;
   }
 
-  //箱の大きさかぶりをなくしつつ、LISで個数を調べる
-  //縦基準の最大入れ子がわかる
+  cout<<bit.initial_range_concat(max_h)<<endl;
 
   return 0;
 }
 
-  //cout<<endl;
-  //rep(i,N)
-  //  cout<<box[i].first<<" "<<box[i].second<<endl;
