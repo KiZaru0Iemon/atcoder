@@ -4,29 +4,21 @@ using namespace std;
 using ll=long long int;
 using P=pair<int,int>;
 
-int tb[60][10010];
-
 int main()
 {
   int W,N,K; cin>>W>>N>>K;
   vector<int> wi(N),im(N);
   rep(i,N)cin>>wi[i]>>im[i];
+  int tb[60][10010]={0};
 
   rep(i,N){
     for(int j=K;j>=0;j--){
       for(int w=W;w>=0;w--){
         if(wi[i]<=w)
           tb[j+1][w]=max(tb[j][w-wi[i]]+im[i],tb[j+1][w]);
-      }
-    }
-  }
+      }}}
 
-  int ans=-1;
-  rep(j,K+1)
-    rep(w,W+1)
-      ans=max(ans,tb[j][w]);
-
-  cout<<ans<<endl;
+  cout<<tb[K][W]<<endl;
 
   return 0;
 }
