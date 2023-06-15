@@ -1,4 +1,5 @@
 message ?= ## commitメッセージ
+base ?= test_field## base.cppの場所
 
 .PHONY:help ## ヘルプを見ることができる
 help:
@@ -24,4 +25,11 @@ auto:
 fpull:
 	git fetch origin master
 	git reset --hard origin/master
+
+.PHONY:bset ## 更新したbase.cppをすべてのbase.cppに適応
+bset:
+	@cp ./$(base)/base.cpp ./algorithms/base.cpp
+	@cp ./$(base)/base.cpp ./contest/base.cpp
+	@cp ./$(base)/base.cpp ./simu/base.cpp
+#@cp ./$(base)/base.cpp ./test_field/base.cpp
 
