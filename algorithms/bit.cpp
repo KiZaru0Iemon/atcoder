@@ -1,4 +1,6 @@
 /* ~~~ binary indexed tree (BIT) ~~~ */
+// データ取得 O(log(n))  n:配列長
+// データ更新 O(log(n))  
 #include <bits/stdc++.h>
 using namespace std;
 #define rep(i,e) for(int i=0;i<(int)(e);i++)

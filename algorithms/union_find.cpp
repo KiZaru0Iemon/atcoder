@@ -1,4 +1,5 @@
 /* ~~~ union find ~~~ */
+// O(log(n))以下  n:node数
 #include <bits/stdc++.h>
 using namespace std;
 #define rep(i,e) for(int i=0;i<(int)(e);i++)

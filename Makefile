@@ -1,5 +1,5 @@
 message ?= ## commitメッセージ
-base ?= test_field## base.cppの場所
+base ?= test_field## 基準にするbase.cppの場所
 
 .PHONY:help ## ヘルプを見ることができる
 help:
