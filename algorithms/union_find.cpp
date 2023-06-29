@@ -2,9 +2,6 @@
 // O(log(n))以下  n:node数
 #include <bits/stdc++.h>
 using namespace std;
-#define rep(i,e) for(int i=0;i<(int)(e);i++)
-using ll=long long int;
-using P=pair<int,int>;
 
 class union_find {
 public:
@@ -38,7 +35,7 @@ int main()
   union_find uf(N);
   vector<char> ans;
 
-  rep(i,Q){
+  for(int i=0; i<Q; i++) {
     int q,a,b; cin>>q>>a>>b;
 
     if(q){
@@ -49,7 +46,7 @@ int main()
     }
   }
 
-  rep(i,ans.size())
+  for(int i=0; i<(int)ans.size(); i++) {
     cout<<(ans[i]?"Yes":"No")<<endl;
 
   return 0;

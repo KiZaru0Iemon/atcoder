@@ -1,9 +1,6 @@
 /* ~~~ 深さ優先探索,幅優先探索 ~~~ */
 #include <bits/stdc++.h>
 using namespace std;
-#define rep(i,e) for(int i=0;i<(e);i++)
-using ll=long long int;
-using P=pair<int,int>;
 
 // == 深さ優先探索 ==
 // O(n+m) n:node数, m:edge数

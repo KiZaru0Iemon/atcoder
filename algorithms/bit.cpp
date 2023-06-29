@@ -3,9 +3,6 @@
 // データ更新 O(log(n))  
 #include <bits/stdc++.h>
 using namespace std;
-#define rep(i,e) for(int i=0;i<(int)(e);i++)
-using ll=long long int;
-using P=pair<int,int>;
 
 /* 配列は0 startだがBITは1 startなので注意して処理する */
 template <typename T>
@@ -40,6 +37,5 @@ public:
 
 int main()
 {
-
   return 0;
 }

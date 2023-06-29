@@ -2,10 +2,17 @@
 #pragma GCC optimize("unroll-loops")
 #include <bits/stdc++.h>
 using namespace std;
-#define rep(i,e) for(int i=0;i<(int)(e);i++)
 #define nl '\n'
+#define rep(i,e) for(int i=0;i<(int)(e);i++)
+#define reps(i,s,e) for(int i=(int)(s);i<(int)(e);i++)
+#define rrep(i,s) for(int i=(int)(s)-1;i>=0;i--)
+#define all(x) (x).begin(),(x).end()
 using ll=long long int;
+using vb=basic_string<bool>;
+using vvb=vector<vb>;
 using P=pair<int,int>;
+using vi=vector<int>;
+using vvi=vector<vi>;
 
 int main()
 {

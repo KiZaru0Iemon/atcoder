@@ -28,8 +28,8 @@ fpull:
 
 .PHONY:bset ## 更新したbase.cppをすべてのbase.cppに適応
 bset:
-	@cp ./$(base)/base.cpp ./algorithms/base.cpp
 	@cp ./$(base)/base.cpp ./contest/base.cpp
 	@cp ./$(base)/base.cpp ./simu/base.cpp
+#@cp ./$(base)/base.cpp ./algorithms/base.cpp
 #@cp ./$(base)/base.cpp ./test_field/base.cpp
 
