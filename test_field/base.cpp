@@ -4,8 +4,9 @@
 using namespace std;
 #define nl '\n'
 #define rep(i,e) for(int i=0;i<(int)(e);i++)
-#define reps(i,s,e) for(int i=(int)(s);i<(int)(e);i++)
-#define rrep(i,s) for(int i=(int)(s)-1;i>=0;i--)
+#define rep2(i,s,e) for(int i=(int)(s);i<(int)(e);i++)
+#define rrep(i,s) for(int i=(int)(s);i>=0;i--)
+#define rrep2(i,s,e) for(int i=(int)(s);i>=(int)(e);i--)
 #define all(x) (x).begin(),(x).end()
 using ll=long long int;
 using vb=basic_string<bool>;
