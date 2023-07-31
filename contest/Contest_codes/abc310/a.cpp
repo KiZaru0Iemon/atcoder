@@ -1,4 +1,5 @@
 #pragma GCC optimize("O3")
+#pragma GCC optimize("unroll-loops")
 #include <bits/stdc++.h>
 using namespace std;
 #define nl '\n'
@@ -17,16 +18,9 @@ using vvi=vector<vi>;
 int main()
 {
   cin.tie(nullptr)->sync_with_stdio(false);
-
-  string S,T; cin>>S>>T;
-  int Ss=S.size(),Ts=T.size();
-
-  vvi dp(Ss+1,vi(Ts+1));
-  rep(i,Ss){
-    rep(j,Ts){
-      dp[i+1][j+1]=max(dp[i+1][j],dp[i][j+1]);
-      if(S[i]==T[j])dp[i+1][j+1]=max(dp[i+1][j+1],dp[i][j]+1);
-    }
-  }
-  cout<<(max(Ss,Ts)-dp[Ss][Ts])<<nl;
+  int N,P,Q; cin>>N>>P>>Q;
+  vi D(N); rep(i,N)cin>>D[i];
+  int minP=P;
+  rep(i,N)minP=min(minP,Q+D[i]);
+  cout<<minP<<nl;
 }

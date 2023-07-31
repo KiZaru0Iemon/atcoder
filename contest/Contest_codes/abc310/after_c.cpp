@@ -18,15 +18,21 @@ int main()
 {
   cin.tie(nullptr)->sync_with_stdio(false);
 
-  string S,T; cin>>S>>T;
-  int Ss=S.size(),Ts=T.size();
-
-  vvi dp(Ss+1,vi(Ts+1));
-  rep(i,Ss){
-    rep(j,Ts){
-      dp[i+1][j+1]=max(dp[i+1][j],dp[i][j+1]);
-      if(S[i]==T[j])dp[i+1][j+1]=max(dp[i+1][j+1],dp[i][j]+1);
-    }
+  int N; cin>>N;
+  set<string> st;
+  rep(i,N){
+    string t; cin>>t;
+    string rt=t;
+    reverse(all(rt));
+    st.insert(t);
+    st.insert(rt);
   }
-  cout<<(max(Ss,Ts)-dp[Ss][Ts])<<nl;
+  int num1=0,num2=0;
+  for(auto u:st){
+    string ru=u;
+    reverse(all(ru));
+    if(u==ru)num1++;
+    else num2++;
+  }
+  cout<<(num1+num2/2)<<nl;
 }

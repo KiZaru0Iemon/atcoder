@@ -1,5 +1,4 @@
 #pragma GCC optimize("O3")
-#pragma GCC optimize("unroll-loops")
 #include <bits/stdc++.h>
 using namespace std;
 #define nl '\n'
