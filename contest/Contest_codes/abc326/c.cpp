@@ -41,10 +41,6 @@ int main()
     }
   }
 
-  //rep(i,A.size()){
-  //  cout<<A[i]<<" "<<C[i]<<" "<<C2[i]<<nl;
-  //}
-
   ll maxi=0;
   rep(i,A.size()){
     int e=lower_bound(all(A),A[i]+M-1)-A.begin();
