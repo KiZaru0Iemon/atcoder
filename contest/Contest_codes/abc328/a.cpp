@@ -17,4 +17,11 @@ using vvi=vector<vi>;
 int main()
 {
   cin.tie(nullptr)->sync_with_stdio(false);
+  int N,X; cin>>N>>X;
+  int sum=0;
+  rep(i,N){
+    int temp; cin>>temp;
+    if(temp<=X)sum+=temp;
+  }
+  cout<<sum<<nl;
 }

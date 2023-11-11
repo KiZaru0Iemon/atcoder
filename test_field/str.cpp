@@ -17,4 +17,9 @@ using vvi=vector<vi>;
 int main()
 {
   cin.tie(nullptr)->sync_with_stdio(false);
+  string c;
+  c.append('a');
+  c.append("b");
+  cout<<c<<endl;
+  cout<<c.size()<<endl;
 }

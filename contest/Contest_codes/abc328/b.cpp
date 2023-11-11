@@ -17,4 +17,20 @@ using vvi=vector<vi>;
 int main()
 {
   cin.tie(nullptr)->sync_with_stdio(false);
+  int N; cin>>N;
+
+  int ans=0;
+  rep(i,N){
+    int m=i+1;
+    int d; cin>>d;
+    for(int j=1;j<=d;j++){
+      string data=to_string(m)+to_string(j);
+      bool jud=true;
+      rep(k,data.size()){
+        if(data[0]!=data[k])jud=false;
+      }
+      if(jud)ans++;
+    }
+  }
+  cout<<ans<<nl;
 }

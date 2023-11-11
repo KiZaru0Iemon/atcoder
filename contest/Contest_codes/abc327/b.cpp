@@ -1,4 +1,4 @@
-#pragma GCC optimize("O2")
+//#pragma GCC optimize("O2")
 #include <bits/stdc++.h>
 using namespace std;
 #define nl '\n'
@@ -16,5 +16,17 @@ using vvi=vector<vi>;
 
 int main()
 {
-  cin.tie(nullptr)->sync_with_stdio(false);
+  //cin.tie(nullptr)->sync_with_stdio(false);
+  ll b; cin>>b;
+  rep2(i,1,16){
+    ll pn=1;
+    rep(j,i){
+      pn*=i;
+    }
+    if(pn==b){
+      cout<<i<<nl;
+      return 0;
+    }
+  }
+  cout<<-1<<nl;
 }

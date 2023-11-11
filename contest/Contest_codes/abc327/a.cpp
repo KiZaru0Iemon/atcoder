@@ -17,4 +17,17 @@ using vvi=vector<vi>;
 int main()
 {
   cin.tie(nullptr)->sync_with_stdio(false);
+  int N; cin>>N;
+  string S; cin>>S;
+  rep(i,N-1){
+    if(S[i]=='a' && S[i+1]=='b'){
+      cout<<"Yes"<<nl;
+      return 0;
+    }
+    if(S[i]=='b' && S[i+1]=='a'){
+      cout<<"Yes"<<nl;
+      return 0;
+    }
+  }
+  cout<<"No"<<nl;
 }

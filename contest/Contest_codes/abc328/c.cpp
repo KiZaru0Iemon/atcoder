@@ -17,4 +17,21 @@ using vvi=vector<vi>;
 int main()
 {
   cin.tie(nullptr)->sync_with_stdio(false);
+  int N,Q; cin>>N>>Q;
+  string S; cin>>S;
+  vi snum(N,0);
+  rep2(i,1,N){
+    if(S[i-1]==S[i]){
+      snum[i]=snum[i-1]+1;
+    }
+    else{
+      snum[i]=snum[i-1];
+    }
+  }
+
+  rep(i,Q){
+    int l,r; cin>>l>>r;
+    l--; r--;
+    cout<<(snum[r]-snum[l])<<nl;
+  }
 }
