@@ -14,46 +14,34 @@ using P=pair<char,int>;
 using vi=vector<int>;
 using vvi=vector<vi>;
 
-string S;
-
-int layer(int i)
+int main()
 {
-  int pprev=0;
-  int prev=i;
-  i++;
+  cin.tie(nullptr)->sync_with_stdio(false);
+  string S; cin>>S;
 
-  while(i<(int)S.size()){
-    if(S[i]=='A')
-      i=layer(i);
-    else if(S[i]=='B'){
-      if(S[prev]=='A'){
+  auto layer=[&](auto func, int i) -> int {
+    int pprev=-1, prev=i;
+    i++;
+
+    while(i<(int)S.size()){
+      if(S[i]=='A')
+        i=func(func,i);
+      else if(S[prev]=='A' && S[i]=='B'){
         pprev=prev;
         prev=i;
+      }
+      else if(S[pprev]=='A' && S[prev]=='B' && S[i]=='C'){
+        S[pprev]=S[prev]=S[i]='#';
+        return i;
       }
       else
         pprev=prev=-1;
       i++;
     }
-    else if(S[i]=='C'){
-      if(S[pprev]=='A' && S[prev]=='B'){
-        S[pprev]=S[prev]=S[i]='#';
-        i++;
-        return i;
-      }
-      else{
-        pprev=prev=-1;
-        i++;
-      }
-    }
-  }
-  return i;
-}
+    return i;
+  };
 
-int main()
-{
-  cin.tie(nullptr)->sync_with_stdio(false);
-  cin>>S;
-  layer(-1);
+  layer(layer,-1);
   rep(i,S.size()){
     if(S[i]!='#')cout<<S[i];
   }

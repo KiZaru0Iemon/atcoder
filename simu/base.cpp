@@ -16,5 +16,4 @@ using vvi=vector<vi>;
 
 int main()
 {
-  cin.tie(nullptr)->sync_with_stdio(false);
 }
