@@ -20,7 +20,7 @@ int main()
   string S,T; cin>>S>>T;
 
   rep(i,N){
-    if(S[i]==T[0]){
+    if(S[i]==T[0] && i+M-1<N){
       int num=0;
       rep(j,M)
         if(S[i+j]==T[j])
@@ -47,7 +47,7 @@ int main()
         int num=0;
         ii=i;
         ii-=now.front(); now.pop();
-        if(ii>=0 && (ii+M)<N){
+        if(ii>=0 && (ii+M-1)<N){
           rep(j,M)
             if(S[ii+j]=='#' || S[ii+j]==T[j])
               num++;
@@ -77,7 +77,7 @@ int main()
         int num=0;
         ii=i;
         ii-=now.front(); now.pop();
-        if(ii>=0 && (ii+M)<N){
+        if(ii>=0 && (ii+M-1)<N){
           rep(j,M)
             if(S[ii+j]=='#' || S[ii+j]==T[j])
               num++;
