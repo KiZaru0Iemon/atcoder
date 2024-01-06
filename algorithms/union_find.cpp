@@ -31,6 +31,7 @@ public:
 
 int main()
 {
+  // N:node数, Q:query数(union findとは関係ない数)
   int N,Q; cin>>N>>Q;
   union_find uf(N);
   vector<char> ans;
@@ -38,16 +39,26 @@ int main()
   for(int i=0; i<Q; i++) {
     int q,a,b; cin>>q>>a>>b;
 
+    //qがtrueで確認、qがfalseで結合処理をする
     if(q){
+      // node a,bが結合しているか確認
       ans.push_back(uf.same(a,b)?true:false);
     }
     else{
+      // node a,bを結合
       uf.unite(a,b);
     }
   }
 
+  //各根ノードを一致させる
+  //これをやると各塊の個数を求められる
+  for(int i=0; i<N; i++)
+    uf.root(i);
+
+  //qのtrueの部分の結果確認
   for(int i=0; i<(int)ans.size(); i++) {
     cout<<(ans[i]?"Yes":"No")<<endl;
+  }
 
   return 0;
 }
